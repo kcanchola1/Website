@@ -7,5 +7,54 @@
 </head>
 <body>
     <script src="Script1.js"></script>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3SLvZGhdFx2w4w0ICbZdOPcyOjt1lzE8",
+            authDomain: "website-f899f.firebaseapp.com",
+            databaseURL: "https://website-f899f.firebaseio.com",
+            projectId: "website-f899f",
+            storageBucket: "website-f899f.appspot.com",
+            messagingSenderId: "686435305270",
+            appId: "1:686435305270:web:a1f532fe5f87c9a686d597",
+            measurementId: "G-3YBD24YDPP"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js">
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithPopup(provider).then(function (result) {
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
+    </script>
+
+
+
 </body>
 </html>
