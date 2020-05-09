@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Casa de Coyote</title>
+    <link rel="stylesheet" href="CDC.css">
+    <div class="topnav">
+        <a class="active" href="Home.html">Home</a>
+        <a href="Menu.html">Menu</a>
+        <a href="Order.html">Order</a>
+        <a href="Reservation.html">Reservation</a>
+        <a href="Contact.html">Contact</a>
+        <a href="About.html">Locations</a>
+    </div>
+</head>
+
+<body>
+    <div class="reservationForm">
+        <form action="/action_page.php" method="get">
+            <label for="fname">First name:</label>
+            <input type="text" id="fname" name="fname"><br><br>
+            <label for="lname">Last name:</label>
+            <input type="text" id="lname" name="lname"><br><br>
+
+            <label for="location">Location:</label>
+            <select id="location">
+                <option value="sanBernardino">San Bernardino</option>
+                <option value="santaClarita">Santa Clarita</option>
+                <option value="temecula">Temecula</option>
+                <option value="venice">Venice</option>
+            </select><br><br>
+            <label for="guestAmt">Number of Guests:</label>
+            <input type="text" id="guestAmt" name="guestAmt"><br><br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date"><br><br>
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time"><br><br>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <label for="phoneNum">Phone Number:</label>
+            <input type="text" id="phoneNum" name="phoneNum"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
