@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Casa de Coyote</title>
+	<link rel="stylesheet" href="CDC.css">
+	<div class="topnav">
+		<a class="active" href="Home.html">Home</a>
+		<a href="Menu.html">Menu</a>
+		<a href="Order.html">Order</a>
+		<a href="Reservation.html">Reservation</a>
+		<a href="Contact.html">Contact</a>
+		<a href="About.html">Locations</a>
+		<a href="LogIn.html">Log In/Out</a>
+	</div>
+</head>
+<body>
+
+	<script src="Script1.js"></script>
+	<div id="login_div" class="addressForm">
+		<form action="/action_page.php" method="get">
+			<label for="email">Email:</label>
+			<input type="email" id="userEmail" name="email"><br><br>
+			<label for="Password">Password:</label>
+			<input type="password" id="userPassword" name="Password"><br><br>
+			<button onclick="login()">Log In</button>
+		</form>
+	</div>
+
+
+	<div id ="user_div" class="LoggedIn">
+		<h3>Welcome User</h3>
+		<p>You are logged in.</p>
+		<button onclick="logout()">Logout</button>
+	</div>
+
+</body>
+</html>
