@@ -2,34 +2,53 @@
 
 
 
+
 function login() {
+    var userEmail = document.getElementById("userEmail").value;
+    var userPassword = document.getElementById("userPassword").value;
 
-    firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
-            // User is signed in.
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
 
-            document.getElementById("user_div").style.display = "block";
-            document.getElementById("login_div").style.display = "none";
+            
+    });
 
-        } else {
-            // No user is signed in.
-            document.getElementById("login_div").style.display = "block";
-            document.getElementById("user_div").style.display = "none";
+    if (firebase.auth().currentUser == null) {
+        window.alert("Email or Password is wrong. Try Again.");
+    }
+    if (firebase.auth().currentUser != null) {
+        window.alert("You are now signed in.");
+        document.getElementById("user_div").style.display = "block";
+        document.getElementById("login_div").style.display = "none";
+    }
 
-        }
-    
 
-    var userEmail = document.getElementById("userEmail");
-    var userPassword = document.getElementById("userPassword");
-    window.alert(userEmail.value + ".." + userPassword.value);
+}
 
-        firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword).catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // ...
+function check() {
 
-            window.alert(error.message)
-        });
 
+    if (firebase.auth().currentUser == null) {
+        document.getElementById("login_div").style.display = "block";
+        document.getElementById("user_div").style.display = "none";
+    }
+    if (firebase.auth().currentUser != null) {
+
+        document.getElementById("user_div").style.display = "block";
+        document.getElementById("login_div").style.display = "none";
+    }
+}
+
+function logout() {
+    firebase.auth().signOut().then(function () {
+        // Sign-out successful.
+        window.alert("Logged out");
+        document.getElementById("login_div").style.display = "block";
+        document.getElementById("user_div").style.display = "none";
+       
+    }).catch(function (error) {
+        // An error happened.
+    });
 }

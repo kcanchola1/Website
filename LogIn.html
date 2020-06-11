@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -14,26 +14,63 @@
 		<a href="About.html">Locations</a>
 		<a href="LogIn.html">Log In/Out</a>
 	</div>
+	<script src="Script1.js"></script>
 </head>
 <body>
+	<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+	<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+	<script src="/__/firebase/7.15.0/firebase-app.js"></script>
 
-	<script src="Script1.js"></script>
-	<div id="login_div" class="addressForm">
-		<form action="/action_page.php" method="get">
-			<label for="email">Email:</label>
-			<input type="email" id="userEmail" name="email"><br><br>
-			<label for="Password">Password:</label>
-			<input type="password" id="userPassword" name="Password"><br><br>
-			<button onclick="login()">Log In</button>
-		</form>
+	<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+	<script src="/__/firebase/7.15.0/firebase-analytics.js"></script>
+
+	<!-- Add Firebase products that you want to use -->
+	<script src="/__/firebase/7.15.0/firebase-auth.js"></script>
+	<script src="/__/firebase/7.15.0/firebase-firestore.js"></script>
+
+	<script>check()</script>
+
+	<div class="addressForm" id="login_div">
+
+		<label for="email">Email:</label>
+		<input type="email" id="userEmail" name="email"><br><br>
+		<label for="Password">Password:</label>
+		<input type="password" id="userPassword" name="Password"><br><br>
+		<button onclick="login()">Log In</button>
+
 	</div>
 
 
-	<div id ="user_div" class="LoggedIn">
+	<div id="user_div" class="user_div">
 		<h3>Welcome User</h3>
 		<p>You are logged in.</p>
 		<button onclick="logout()">Logout</button>
 	</div>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+
+	<script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyB3SLvZGhdFx2w4w0ICbZdOPcyOjt1lzE8",
+            authDomain: "website-f899f.firebaseapp.com",
+            databaseURL: "https://website-f899f.firebaseio.com",
+            projectId: "website-f899f",
+            storageBucket: "website-f899f.appspot.com",
+            messagingSenderId: "686435305270",
+            appId: "1:686435305270:web:a1f532fe5f87c9a686d597",
+            measurementId: "G-3YBD24YDPP"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+	</script>
 
 </body>
 </html>
